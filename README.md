@@ -1,8 +1,4 @@
----
-layout: default
-title: Preface
-nav_order: 0
----
+## Printable Docs
 
 This is a bare-minimum *Printable Docs* template to create a printer-friendly Jekyll site that uses the [Just the Docs] and [Paged.js]. Just the Docs is a theme for generating static websites with Jekyll. You can write source files for your web pages using Markdown, the Liquid templating language, and HTML. Paged.js is a free and open source JavaScript library that paginates content in the browser to create PDF output from any HTML content. This means you can have browser-friendly documentation and for print (eg. books) using just HTML and CSS!
 
@@ -20,6 +16,12 @@ Other than that, you're free to customize sites that you create with this templa
 This *Printable Docs* includes a Preface and two sample Chapters to show how Markdown source files are structured. The CSS asset `print.css` contains formating for chapter, section, and sub-section levels, however, sub-section it is not tested. Please refer to Paged.js documentation on how to further customize it to your liking. 
 
 *Printable Docs* is still under heavy development. It does not have any release just yet. However, feel free to fork, use, and improve it as you may see it fits.
+
+## Licensing and Attribution
+
+This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
+
+The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
 
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [GitHub Pages]: https://docs.github.com/en/pages
