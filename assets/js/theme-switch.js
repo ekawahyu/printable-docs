@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function() {
   
       localStorage.setItem('theme', newTheme);
       setTheme(newTheme);
+      jtd.setTheme(newTheme);
     });
   
     function getTheme() {
