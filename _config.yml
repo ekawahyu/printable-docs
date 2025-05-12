@@ -4,3 +4,7 @@ theme: just-the-docs
 color_scheme: "light"
 
 url: https://ekawahyu.github.io/printable-docs
+
+aux_links:
+  "Printable Docs on GitHub":
+    - "https://github.com/ekawahyu/printable-docs"

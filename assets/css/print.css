@@ -2,16 +2,20 @@
     size: letter;
     margin: 0.75in;
   
-    @top-center{
-      content: string("Hello");
-      font-weight: bold;
-      font-size: 12pt;
-    }
-  
     @bottom-center {
       content: "Page " counter(page) " of " counter(pages);
       font-size: 10pt;
       color: #666;
+    }
+  }
+
+  @media print {
+    .side-bar {
+      display: none;
+    }
+    .main-content {
+      max-width: auto;
+      margin: 1em;
     }
   }
 
