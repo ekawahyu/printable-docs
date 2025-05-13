@@ -1,4 +1,13 @@
 {% if page.print %}
+  <style>
+    @page {
+      @top-right {
+        content: "{{ site.title | default: 'Printable Docs' }}";
+        font-size: 10pt;
+        color: #666;
+      }
+    }
+  </style>
   <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
   <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}">
 {% else %}

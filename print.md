@@ -17,7 +17,7 @@ print: true
 </div>
 
 {% for chapter in top_pages %}
-  <div id="{{ chapter.title }}" class="chapter">
+  <div id="{{ chapter.title }}" class="chapter" data-running-title="{{ chapter.title | escape }}">
     <h1>{{ chapter.title }}</h1>
     {{ chapter.content | markdownify }}
 
