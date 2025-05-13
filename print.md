@@ -7,7 +7,7 @@ print: true
 
 {% assign top_pages = site.pages | where_exp: "p", "p.title and p.parent == nil and p.path != page.path" | sort: "nav_order" %}
 
-# Table of Contents
+<h1>Table of Contents</h1>
 <div class="toc">
   <ul>
   {% for chapter in top_pages %}
