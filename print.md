@@ -11,13 +11,36 @@ print: true
 <div class="toc">
   <ul>
   {% for chapter in top_pages %}
-    <li><a href="#{{ chapter.title }}">{{ chapter.title }}</a></li>
+    <li class="toc-label">
+      <a href="#{{ chapter.title }}">
+        <span class="toc-text">{{ chapter.title }}</span>
+        <span class="toc-page" data-target="#{{ chapter.title }}"></span>
+      </a>
+    </li>
+    {% assign sections = site.pages | where: "parent", chapter.title | sort: "nav_order" %}
+    {% for section in sections %}
+      <li class="toc-label">
+        <a href="#{{ section.title }}">
+          <span class="toc-text">{{ section.title }}</span>
+          <span class="toc-page" data-target="#{{ section.title }}"></span>
+        </a>
+      </li>
+      {% assign subsections = site.pages | where: "parent", section.title | sort: "nav_order" %}
+      {% for subsection in subsections %}
+        <li class="toc-label">
+          <a href="#{{ subsection.title }}">
+            <span class="toc-text">{{ subsection.title }}</span>
+            <span class="toc-page" data-target="#{{ subsection.title }}"></span>
+          </a>
+        </li>
+      {% endfor %}
+    {% endfor %}
   {% endfor %}
   </ul>
 </div>
 
 {% for chapter in top_pages %}
-  <div id="{{ chapter.title }}" class="chapter" data-running-title="{{ chapter.title | escape }}">
+  <div id="{{ chapter.title }}" class="chapter" data-running-title="{{ chapter.title }}">
     <h1>{{ chapter.title }}</h1>
     {{ chapter.content | markdownify }}
 
@@ -29,7 +52,7 @@ print: true
 
         {% assign subsections = site.pages | where: "parent", section.title | sort: "nav_order" %}
         {% for subsection in subsections %}
-          <div class="subsection">
+          <div id="{{ subsection.title }}" class="subsection">
             <h3>{{ subsection.title }}</h3>
             {{ subsection.content | markdownify }}
           </div>
